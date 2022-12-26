@@ -12,7 +12,7 @@ if (strlen($username) < 3 || strlen($username) > 20) die("invalid username.");
 
 if ((!file_exists("cache/{$usertheme}/{$username}-message.html") || (file_exists("cache/{$usertheme}/{$username}-message.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/{$username}-message.html"))) || (!file_exists("cache/{$usertheme}/{$username}-stats.html") || (file_exists("cache/{$usertheme}/{$username}-stats.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/{$username}-stats.html")))) {
     $profile = $conn->where("username", $username)->getOne("user");
-    if (empty($user)) die("user not found.");
+    if (empty($profile)) die("user not found.");
     $count = $conn->where("user", $username)->getValue("avatars", "count(*)");
 } elseif ($loggedin && ($user["level"] == 10 || $user["username"] == $username)) {
     $profile = $conn->where("username", $username)->getOne("user", "banned,username");
