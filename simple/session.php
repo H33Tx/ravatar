@@ -12,8 +12,8 @@ if (isset($_COOKIE[$config["cookie"] . "_session"]) && !empty($_COOKIE[$config["
                 $loggedin = false;
             }
         } else {
-            if (!isset($bannedpage)) header("Location: banned.php");
-            $loggedin = false;
+            if (!isset($bannedpage)) header("Location: banned.php") && die("LOL");
+            $loggedin = true;
         }
     } else {
         $loggedin = false;
