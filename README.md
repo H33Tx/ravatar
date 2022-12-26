@@ -1,6 +1,6 @@
 <h2 align="center"><u>Ravatar - Random Avatar Hosting</u></h2>
 
-![Random avatars, from everyone, for everyone.](http://cdn.h33t.moe/images/repo_banners/rav.png)
+![Random avatars, from everyone, for everyone.](https://cdn.h33t.moe/images/repo_banners/rav.png)
 <h4 align="center"> Random avatars, from everyone, for everyone. </h4>
 
 <p align="center">
@@ -30,7 +30,7 @@ RAV, or Ravatar, is a software entirely written in PHP. Its use is that people c
  - Edit `config.php` to your likings and you're done
 
 ### [+] Screenshot
-![screenshot](http://cdn.h33t.moe/images/repo_banners/rav_ss.jpg)
+![screenshot](https://cdn.h33t.moe/images/repo_banners/rav_ss2.jpg)
 
 ### [+] Features
  - Account System
