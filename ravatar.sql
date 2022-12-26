@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 26. Dez 2022 um 02:09
+-- Erstellungszeit: 26. Dez 2022 um 15:46
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -33,6 +33,8 @@ CREATE TABLE `avatars` (
   `image` text NOT NULL,
   `type` varchar(4) NOT NULL,
   `file` text NOT NULL,
+  `hidden` tinyint(1) NOT NULL DEFAULT 0,
+  `by_admin` tinyint(1) NOT NULL DEFAULT 0,
   `timestamp` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -62,6 +64,7 @@ CREATE TABLE `user` (
   `email` varchar(254) NOT NULL,
   `message` text DEFAULT NULL,
   `level` int(11) NOT NULL,
+  `banned` tinyint(1) NOT NULL DEFAULT 0,
   `timestamp` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

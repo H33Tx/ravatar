@@ -80,7 +80,7 @@
             ob_start(); ?>
             <div class="grid grid-cols-6 mt-1">
                 <?php foreach ($latest as $late) { ?>
-                    <div class="col-span-1 hover:bg-slate-400">
+                    <div class="col-span-1 hover:bg-slate-600">
                         <a href="user.php?name=<?= $late["user"] ?>#<?= stripslashes($conn->escape($purifier->purify($late["file"]))) ?>">
                             <img src="<?= $config["url"] ?>data/<?= $late["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($late["file"]))) ?>" class="w-full px-2 pt-2" loading="lazy">
                         </a>
@@ -118,7 +118,7 @@
             ob_start(); ?>
             <div class="grid grid-cols-6 mt-1">
                 <?php foreach ($examples as $example) { ?>
-                    <div class="col-span-1 hover:bg-slate-400">
+                    <div class="col-span-1 hover:bg-slate-600">
                         <a href="user.php?name=<?= $example["user"] ?>#<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>">
                             <img src="<?= $config["url"] ?>data/<?= $example["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>" class="w-full px-2 pt-2" loading="lazy">
                         </a>

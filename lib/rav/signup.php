@@ -32,4 +32,5 @@ if (isset($_POST["signup"])) {
         "token" => $token
     ));
     setcookie($config["cookie"] . "_session", $token, time() + 60 * 60 * 24 * 30, "/", $config["domain"]);
+    header("Location: avatars.php");
 }

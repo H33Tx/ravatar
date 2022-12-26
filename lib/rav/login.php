@@ -14,13 +14,14 @@ if (isset($_POST["login"])) {
     $try = $conn->where("username", $username)->getOne("user");
 
     if (crypt($password, $config["salt"]) === $try["password"]) {
+        if ($try["banned"]) header("Location: banned.php") && die("user is banned.");
         $token = md5(rand());
         $conn->insert("session", array(
             "user" => $username,
             "token" => $token
         ));
         setcookie($config["cookie"] . "_session", $token, time() + 60 * 60 * 24 * 30, "/", $config["domain"]);
-        header("location: index.php");
+        header("location: avatars.php");
     } else {
         die("password wrong.");
     }

@@ -78,7 +78,7 @@
             <?= $lang["avatars"] ?>
         </div>
         <div class="grid grid-cols-8 mt-1">
-            <?php $cachefile = "cache/{$usertheme}/{$user["username"]}.html";
+            <?php $cachefile = "cache/{$usertheme}/{$user["username"]}-edit.html";
             if (file_exists($cachefile) && time() - $config["cachetime"] < filemtime($cachefile)) {
                 echo "<!-- Cached copy, generated " . date('d/m/Y H:i', filemtime($cachefile)) . " SERVER TIME -->";
                 $handle = fopen($cachefile, 'rb');
@@ -93,14 +93,21 @@
             } else {
                 ob_start(); ?>
                 <?php foreach ($avatars as $avatar) { ?>
-                    <a href="<?= $config["url"] ?>data/<?= $avatar["file"] ?>" target="_blank" class="col-span-1 hover:bg-slate-400">
-                        <div id="<?= stripslashes($conn->escape($purifier->purify($avatar["file"]))) ?>">
+                    <div id="<?= stripslashes($conn->escape($purifier->purify($avatar["file"]))) ?>" class="col-span-1 hover:bg-slate-600 <?= $avatar["hidden"] ? "bg-slate-400" : "" ?>">
+                        <a href="<?= $config["url"] ?>data/<?= $avatar["file"] ?>" target="_blank">
                             <img src="<?= $config["url"] ?>data/<?= $avatar["file"] ?>" alt="<?= $avatar["image"] ?>" class="w-full px-2 pt-2" loading="lazy">
-                            <p class="text-sm text-center pb-1">
-                                <?= stripslashes($conn->escape($purifier->purify($avatar["image"]))) ?>
-                            </p>
-                        </div>
-                    </a>
+                        </a>
+                        <p class="text-sm text-center pb-1">
+                            <?= stripslashes($conn->escape($purifier->purify($avatar["image"]))) ?>
+                        </p>
+                        <p class="text-sm text-center pb-1">
+                            <?php if (!$avatar["by_admin"] || ($avatar["by_admin"] && $user["level"] == 10)) { ?>
+                                <a onclick="toggleVisible('<?= stripslashes($conn->escape($purifier->purify($avatar["file"]))) ?>');window.open('<?= $config["url"] ?>toggle.php?id=<?= $avatar["id"] ?>');" class="underline text-blue-500 hover:text-blue-800 cursor-pointer">
+                                    [Toggle]
+                                </a>
+                            <?php } ?>
+                        </p>
+                    </div>
                 <?php } ?>
             <?php include "lib/PHPCache/cache.php";
             } ?>

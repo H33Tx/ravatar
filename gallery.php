@@ -6,10 +6,10 @@ require "load.php";
 // Hier dann alles andere wie SQL-Queries und so
 require "lib/PHPCache/refresh.php";
 if (!file_exists("cache/{$usertheme}/latest.html") || (file_exists("cache/{$usertheme}/latest.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/latest.html"))) {
-    $latest = $conn->orderBy("id", "DESC")->get("avatars", $config["default"]["latest"]);
+    $latest = $conn->orderBy("id", "DESC")->where("hidden", false)->get("avatars", $config["default"]["latest"]);
 }
 if (!file_exists("cache/{$usertheme}/index.html") || (file_exists("cache/{$usertheme}/index.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/index.html"))) {
-    $examples = $conn->orderBy("RAND ()")->get("avatars", $config["default"]["random"]);
+    $examples = $conn->orderBy("RAND ()")->where("hidden", false)->get("avatars", $config["default"]["random"]);
 }
 if (!file_exists("cache/{$usertheme}/users.html") || (file_exists("cache/{$usertheme}/users.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/users.html"))) {
     $users = $conn->orderBy("username", "ASC")->get("user");

@@ -8,7 +8,7 @@ if(!$loggedin) die("not logged in.");
 require "lib/rav/settings.php";
 require "lib/rav/post_avatar.php";
 require "lib/PHPCache/refresh.php";
-if (!file_exists("cache/{$usertheme}/{$user["username"]}.html") || (file_exists("cache/{$usertheme}/{$user["username"]}.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/{$user["username"]}.html"))) {
+if (!file_exists("cache/{$usertheme}/{$user["username"]}-edit.html") || (file_exists("cache/{$usertheme}/{$user["username"]}-edit.html") && time() - $config["cachetime"] > filemtime("cache/{$usertheme}/{$user["username"]}-edit.html"))) {
     $avatars = $conn->where("user", $user["username"])->orderBy("id", "ASC")->get("avatars");
 }
 

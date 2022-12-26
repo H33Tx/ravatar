@@ -18,7 +18,7 @@ if (isset($_POST["upload"])) {
                 "type" => $avatar["file"],
                 "file" => $image . "." . $avatar["file"]
             ));
-            header("Refresh: 1");
+            header("Location: uploaded.php");
         } else {
             die("invalid filetype or fake-image.");
         }

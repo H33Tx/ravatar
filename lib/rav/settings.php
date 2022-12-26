@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST["settings"])) {
-    $message = $purifier->purify($_POST["message"]);
+    $message = htmlentities(strip_tags($purifier->purify($_POST["message"])));
     $email = $conn->escape($purifier->purify($_POST["email"]));
 
     if (strlen($email) < 6 || strlen($email) > 64) die("invalid email. min 6, max 254.");

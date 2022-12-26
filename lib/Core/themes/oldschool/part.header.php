@@ -17,3 +17,14 @@
             font-family: 'Caudex', serif;
         }
     </style>
+
+    <script>
+        function toggleVisible(id) {
+            let div = document.getElementById(id);
+            if (div.classList.contains("bg-slate-400")) {
+                div.classList.remove("bg-slate-400");
+            } else {
+                div.classList.add("bg-slate-400");
+            }
+        }
+    </script>
