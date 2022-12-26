@@ -10,11 +10,16 @@ $avatar = $conn->where("id", $id)->getOne("avatars");
 if ($user["level"] != 10 && ($avatar["user"] != $user["username"])) die("no permission to perform this.");
 if ($user["username"] == $avatar["user"] && $user["level"] != 10 && $avatar["by_admin"]) die("no permission to perform this.");
 if ($avatar["hidden"]) {
-    $conn->where("id", $id)->update("avatars", array("hidden" => false));
-    if ($user["level"] == 10) $conn->where("id", $id)->update("avatars", array("by_admin" => false));
+    if ($user["level"] == 10)
+        $conn->where("id", $id)->update("avatars", array("hidden" => false, "by_admin" => false));
+    else
+        $conn->where("id", $id)->update("avatars", array("hidden" => false));
 } else {
     $conn->where("id", $id)->update("avatars", array("hidden" => true));
-    if ($user["level"] == 10) $conn->where("id", $id)->update("avatars", array("by_admin" => true));
+    if ($user["level"] == 10)
+        $conn->where("id", $id)->update("avatars", array("hidden" => true, "by_admin" => true));
+    else
+        $conn->where("id", $id)->update("avatars", array("hidden" => true));
 }
 echo "visibility has been toggled.";
 

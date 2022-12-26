@@ -25,7 +25,6 @@ RAV, or Ravatar, is a software entirely written in PHP. Its use is that people c
  - `cd /path_to_whatever/simple/`
  - `nano config.php`
  - Import `ravatar.sql` into your MySQL Database
- - Create folders `cache` and `data` in the root directory
  - Inside the folder `cache`, create a directory for every theme with the same name as the theme for caching
  - Edit `config.php` to your likings and you're done
 
