@@ -17,7 +17,7 @@ if ($loggedin && $user["level"] == 10) {
         $username = stripslashes($conn->escape($purifier->purify($_POST["username"])));
         $try = $conn->where("username", $username)->getOne("user");
         if (empty($try)) die("user not found.");
-        $conn->where("user", $username)->update("avatars", array("hidden" => false));
+        $conn->where("user", $username)->update("avatars", array("hidden" => false, "by_admin" => false));
         header("Location: bump.php?page=user&name={$username}");
     }
 
@@ -25,7 +25,7 @@ if ($loggedin && $user["level"] == 10) {
         $username = stripslashes($conn->escape($purifier->purify($_POST["username"])));
         $try = $conn->where("username", $username)->getOne("user");
         if (empty($try)) die("user not found.");
-        $conn->where("user", $username)->update("avatars", array("hidden" => true));
+        $conn->where("user", $username)->update("avatars", array("hidden" => true, "by_admin" => true));
         header("Location: bump.php?page=user&name={$username}");
     }
 }
