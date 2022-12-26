@@ -1,6 +1,6 @@
 <div class="p-1 border border-black rounded-lg bg-slate-300 shadow-md shadow-black my-5">
     <p class="text-center">
-        <?= $lang["copyright"] ?> <?= date("Y") ?> &copy; <a href="<?= $config["url"] ?>" class="underline text-blue-500 hover:text-blue-800"><?= $config["title"] ?></a> <?= $lang["by"] ?> <a href="https://h33t.moe" class="underline text-blue-500 hover:text-blue-800" target="_blank">Team H33T</a>. <?= $lang["no_claim_is_made_of_avatar_ownership"] ?>
+        <?= $lang["copyright"] ?> <?= date("Y") ?> &copy; <a href="<?= $config["url"] ?>" class="underline text-blue-500 hover:text-blue-800"><?= $config["title"] ?></a> <?= $lang["by"] ?> <a href="https://h33t.moe" class="underline text-blue-500 hover:text-blue-800" target="_blank">Team H33T</a>. <?= $lang["no claim is made of avatar ownership"] ?>
     </p>
     <p class="text-center text-gray-500 text-sm">
         Coding by <a href="https://github.com/saintly2k" target="_blank" class="underline text-blue-500 hover:text-blue-800">Saintly2k</a> and <a href="https://github.com/s-vhs" class="underline text-blue-500 hover:text-blue-800" target="_blank">Sieur</a>,
