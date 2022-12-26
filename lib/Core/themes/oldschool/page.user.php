@@ -41,7 +41,9 @@
             <div class="mt-1">
                 <form method="POST" name="ban">
                     <input type="text" name="username" value="<?= $username ?>" hidden>
-                    <input type="submit" name="ban" value="<?= $profile["banned"] ? $lang["unban user"] : $lang["ban user"] ?>" class="mt-1 w-full rounded-full border border-black hover:bg-slate-300 cursor-pointer">
+                    <?php if ($user["username"] != $username) { ?>
+                        <input type="submit" name="ban" value="<?= $profile["banned"] ? $lang["unban user"] : $lang["ban user"] ?>" class="mt-1 w-full rounded-full border border-black hover:bg-slate-300 cursor-pointer">
+                    <?php } ?>
                     <div class="grid grid-cols-2 gap-1">
                         <input type="submit" name="setImagesPublic" value="<?= $lang["set images public"] ?>" class="mt-1 w-full rounded-full col-span-1 border border-black hover:bg-slate-300 cursor-pointer">
                         <input type="submit" name="setImagesPrivate" value="<?= $lang["set images private"] ?>" class="mt-1 w-full rounded-full col-span-1 border border-black hover:bg-slate-300 cursor-pointer">

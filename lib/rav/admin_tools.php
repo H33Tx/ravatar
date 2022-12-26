@@ -5,6 +5,7 @@ if ($loggedin && $user["level"] == 10) {
         $username = stripslashes($conn->escape($purifier->purify($_POST["username"])));
         $try = $conn->where("username", $username)->getOne("user");
         if (empty($try)) die("user not found.");
+        if ($try["username"] == $user["username"]) die("cannot ban yourself.");
         if ($try["banned"]) {
             $conn->where("username", $username)->update("user", array("banned" => false));
         } else {
