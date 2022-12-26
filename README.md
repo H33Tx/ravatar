@@ -50,6 +50,13 @@ If you like this software, please consider donating so we can pay the rent for o
 - PayPal: https://paypal.me/WOLFRAMEdev or yuki.akihabara@yandex.com
 - KoFi: https://ko-fi.com/saintly
 
+### [+] Technologies used
+- [TailwindCSS](https://tailwindcss.com) (for theme `oldschool`)
+- [PHP](https://php.net) and [MySQL](https://mysql.com)
+- [H33T's PHP Cache](https://github.com/H33Tx/PHP-Cache)
+- [ThingEngineer's PHP-MySQLi-Database-Class](https://github.com/ThingEngineer/PHP-MySQLi-Database-Class)
+- [HTML Purifier](http://htmlpurifier.org)
+
 ### [+] Disclaimer 
 No claim is made of avatar ownership. The Team is not to be held liable for what you do with this software.
 
