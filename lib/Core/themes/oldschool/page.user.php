@@ -126,11 +126,11 @@
                 <?php foreach ($avatars as $avatar) { ?>
                     <div id="<?= stripslashes($conn->escape($purifier->purify($avatar["file"]))) ?>" class="col-span-1 hover:bg-slate-600 <?= $avatar["hidden"] ? "bg-slate-400" : "" ?>">
                         <a href="<?= $config["url"] ?>data/<?= $avatar["file"] ?>" target="_blank">
-                            <img src="<?= $config["url"] ?>data/<?= $avatar["file"] ?>" alt="<?= $avatar["image"] ?>" class="w-full px-2 pt-2" loading="lazy">
+                            <img src="<?= $config["url"] ?>data/<?= $avatar["file"] ?>" alt="<?= $avatar["image"] ?>" class="w-full px-2 aspect-square pt-2 <?= $loggedin && ($user["level"] == 10 || $username == $user["username"]) ? "" : "pb-2" ?>" loading="lazy">
                         </a>
-                        <p class="text-sm text-center <?= $loggedin && ($user["level"] == 10 || $username == $user["username"]) ? "" : "pb-1" ?>">
+                        <!-- <p class="text-sm text-center <?= $loggedin && ($user["level"] == 10 || $username == $user["username"]) ? "" : "pb-1" ?>">
                             <?= stripslashes($conn->escape($purifier->purify($avatar["image"]))) ?>
-                        </p>
+                        </p> -->
                         <?php if ($loggedin && ($user["level"] == 10 || ($username == $user["username"] && !$avatar["by_admin"]))) { ?>
                             <p class="text-sm text-center pb-1">
                                 <a onclick="toggleVisible('<?= stripslashes($conn->escape($purifier->purify($avatar["file"]))) ?>');window.open('<?= $config["url"] ?>toggle.php?id=<?= $avatar["id"] ?>');" class="underline text-blue-500 hover:text-blue-800 cursor-pointer">

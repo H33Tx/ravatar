@@ -82,7 +82,7 @@
                 <?php foreach ($latest as $late) { ?>
                     <div class="col-span-1 hover:bg-slate-600">
                         <a href="user.php?name=<?= $late["user"] ?>#<?= stripslashes($conn->escape($purifier->purify($late["file"]))) ?>">
-                            <img src="<?= $config["url"] ?>data/<?= $late["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($late["file"]))) ?>" class="w-full px-2 pt-2" loading="lazy">
+                            <img src="<?= $config["url"] ?>data/<?= $late["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($late["file"]))) ?>" class="w-full px-2 pt-2 aspect-square" loading="lazy">
                         </a>
                         <p class="text-sm text-center pb-1">
                             <a href="user.php?name=<?= $late["user"] ?>" class="underline text-blue-500 hover:text-blue-800"><?= $late["user"] ?></a>
@@ -120,7 +120,7 @@
                 <?php foreach ($examples as $example) { ?>
                     <div class="col-span-1 hover:bg-slate-600">
                         <a href="user.php?name=<?= $example["user"] ?>#<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>">
-                            <img src="<?= $config["url"] ?>data/<?= $example["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>" class="w-full px-2 pt-2" loading="lazy">
+                            <img src="<?= $config["url"] ?>data/<?= $example["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>" class="w-full px-2 pt-2 aspect-square" loading="lazy">
                         </a>
                         <p class="text-sm text-center pb-1">
                             <a href="user.php?name=<?= $example["user"] ?>" class="underline text-blue-500 hover:text-blue-800"><?= $example["user"] ?></a>

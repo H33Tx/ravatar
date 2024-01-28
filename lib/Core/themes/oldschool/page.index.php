@@ -44,7 +44,7 @@
                         <label for="signup-email">
                             <?= $lang["email"] ?>
                         </label>
-                        <input minlength="6" maxlength="254" required type="email" name="email" id="signup-email" class="w-full col-span-2 border border-black">
+                        <input minlength="6" maxlength="254" type="email" name="email" id="signup-email" class="w-full col-span-2 border border-black">
                         <input type="submit" name="signup" class="w-full rounded-full col-span-3 border border-black hover:bg-slate-300 cursor-pointer" value="<?= $lang["create"] ?>">
                     </div>
                 </form>
@@ -99,7 +99,7 @@
                 <?php foreach ($examples as $example) { ?>
                     <div class="col-span-1 hover:bg-slate-600">
                         <a href="user.php?name=<?= $example["user"] ?>#<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>">
-                            <img src="<?= $config["url"] ?>data/<?= $example["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>" class="w-full px-2 pt-2" loading="lazy">
+                            <img src="<?= $config["url"] ?>data/<?= $example["file"] ?>" alt="<?= stripslashes($conn->escape($purifier->purify($example["file"]))) ?>" class="w-full px-2 pt-2 aspect-square" loading="lazy">
                         </a>
                         <p class="text-sm text-center pb-1">
                             <a href="user.php?name=<?= $example["user"] ?>" class="underline text-blue-500 hover:text-blue-800"><?= $example["user"] ?></a>
